@@ -2,7 +2,7 @@ An api for connecting to Last.FM through StepZen's GraphQL implementation.
 
 Example API url: http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=disco&api_key=YOU_API_KEY&format=json
 
-Example API Return:
+Example API Return for tag "disco":
 ```js
 {
     "albums": {
