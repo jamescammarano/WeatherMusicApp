@@ -1,28 +1,29 @@
-type Image {
-    text: String!
-    size: String!
-}
+# type Image {
+#     text: String!
+#     size: String!
+# }
 
-type Artist {
-    name: String!
-    mbid: String!
-    url: String!
-}
+# type Artist {
+#     name: String!
+#     mbid: String!
+#     url: String!
+# }
 
-type Album {
-    name: String!
-    mbid: String!
-    url: String!
-    artists: [Artist!]
-    images: [Image!]
-}
+# type Album {
+#     name: String!
+#     mbid: String!
+#     url: String!
+#     artists: [Artist!]
+#     images: [Image!]
+# }
 
-type Tag {
-  albums: [Album!]
-}
+# type Tag {
+#   albums: [Album!]
+# }
 
-type Query {
-  tagAlbumLookUp(tag: String!): Tag
-    @rest (endpoint: "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=$tag&api_key=0e792698fad91961757402da16210001&format=json", resultroot: "data")
+# type Query {
+#   tagAlbumLookUp(tag: String!, apiKey: String!): Tag
+#     @rest (endpoint: "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=$tag&api_key=$apiKey&format=json", resultroot: "data")
 
-}
+
+# }

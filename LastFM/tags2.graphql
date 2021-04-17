@@ -1,0 +1,40 @@
+type Image {
+    text: String!
+    size: String!
+}
+
+type Artist {
+    name: String!
+    mbid: String!
+    url: String!
+}
+
+type Album {
+    name: String!
+    mbid: String!
+    url: String!
+    artistName: String!
+}
+
+type Query{
+    album(tag: String!, apiKey: String!): [Album]
+    @rest(
+        setters: [
+            {field:"name",path:"name"}
+            {field:"url", path:"url"}
+            {field:"mbid",path:"mbid"}
+            {field:"artistName", path:"artist.name"}
+            ]
+        resultroot: "albums.album[]"
+        endpoint: "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=$tag&api_key=$apiKey&format=json"
+    )
+    images(tag: String!, apiKey: String!): [Image]
+    @rest(
+        setters: [
+            {field:"size",path:"size"}
+            # {field:"text", path:"#text"}
+            ]
+        resultroot: "albums.album[].images[]"
+        endpoint: "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=$tag&api_key=$apiKey&format=json"
+    )
+}
