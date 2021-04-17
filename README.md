@@ -1,2 +1,2 @@
 # WeatherMusicApp
-An app the suggests music based on the weather.
+An app that suggests music based on the weather.
